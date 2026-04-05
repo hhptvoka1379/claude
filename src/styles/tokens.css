@@ -1,0 +1,59 @@
+:root {
+  /* Background & Surface */
+  --colour-bg: #faf7f2;
+  --colour-surface: #f5f0e8;
+  --colour-border: #e2d8c8;
+
+  /* Text */
+  --colour-text: #28201a;
+  --colour-text-muted: #8a7a6a;
+
+  /* Accent & Status */
+  --colour-accent: #6b4f3a;
+  --colour-accent-light: #8b6f5a;
+  --colour-success: #4a7c59;
+  --colour-warning: #c07a30;
+  --colour-error: #c05050;
+
+  /* Subject colours */
+  --colour-matematica: #c05050;
+  --colour-fisica: #c07a30;
+  --colour-italiano: #6b4f3a;
+  --colour-storia: #4a7c59;
+  --colour-inglese: #3a6b7c;
+  --colour-filosofia: #7c5c9a;
+  --colour-scienze: #4a7a6b;
+  --colour-educfisica: #7c6b3a;
+
+  /* Typography */
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Crimson Pro', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --font-scale: 1;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Shadows */
+  --shadow-card: 0 2px 8px rgba(40, 30, 20, 0.07);
+  --shadow-card-hover: 0 4px 12px rgba(40, 30, 20, 0.12);
+  --shadow-modal: 0 8px 30px rgba(40, 30, 20, 0.18);
+
+  /* Layout */
+  --sidebar-width: 220px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 350ms ease;
+}

@@ -1,0 +1,158 @@
+/* Sessions page layout */
+.sessions-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sessions-page__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sessions-page__header h1 {
+  margin: 0;
+  font-family: var(--font-heading);
+}
+
+.sessions-page__metrics {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.sessions-page__chart {
+  padding: 16px;
+}
+
+/* Filters bar */
+.sessions-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.sessions-filters .form-field {
+  min-width: 140px;
+}
+
+/* Card grid */
+.sessions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 14px;
+}
+
+/* Session card */
+.session-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.session-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.session-card__duration {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-mono, monospace);
+  color: var(--colour-accent, #6b4f3a);
+}
+
+.session-card__meta {
+  display: flex;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: var(--colour-text-muted);
+  align-items: center;
+}
+
+.session-card__topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.session-card__notes {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--colour-text-muted);
+  line-height: 1.4;
+}
+
+/* Session form */
+.session-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.session-form__row {
+  display: flex;
+  gap: 12px;
+}
+
+.session-form__row > * {
+  flex: 1;
+}
+
+.session-form__topics {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid var(--colour-border, #ddd);
+  border-radius: var(--radius-md);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.session-form__topic-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.session-form__topic-subject {
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 2px;
+}
+
+.session-form__topic-check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 2px 0;
+}
+
+.session-form__topic-check input[type="checkbox"] {
+  margin: 0;
+}
+
+.session-form__xp-preview {
+  font-size: 0.85rem;
+  color: var(--colour-text-muted);
+  padding: 8px 12px;
+  background: var(--colour-surface, #f9f5ef);
+  border-radius: var(--radius-md);
+}
+
+.session-form__xp-preview strong {
+  color: var(--colour-success, #2e7d32);
+}
+
+.session-form__actions {
+  display: flex;
+  gap: 8px;
+  padding-top: 8px;
+}

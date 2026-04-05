@@ -1,0 +1,33 @@
+.topbar {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--colour-surface);
+  border-bottom: 1px solid var(--colour-border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.topbar-menu {
+  color: var(--colour-text);
+  padding: 6px;
+  border-radius: var(--radius-sm);
+}
+.topbar-menu:hover {
+  background: var(--colour-border);
+}
+
+.topbar-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--colour-accent);
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    display: flex;
+  }
+}

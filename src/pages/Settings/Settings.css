@@ -1,0 +1,85 @@
+.settings-page {
+  max-width: 700px;
+}
+
+.settings-section {
+  margin-bottom: var(--space-lg);
+}
+
+.settings-section h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.settings-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.settings-slider {
+  flex: 1;
+  max-width: 300px;
+  height: 6px;
+  appearance: none;
+  background: var(--colour-border);
+  border-radius: 3px;
+  outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--colour-accent);
+  cursor: pointer;
+}
+
+.settings-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.settings-section--danger {
+  border-left-color: var(--colour-error);
+}
+
+.subject-settings-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.subject-setting-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+}
+
+.subject-setting-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.subject-setting-name {
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 500;
+  min-width: 100px;
+}
+
+.subject-setting-field {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.subject-setting-field .form-input {
+  padding: 4px 8px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}

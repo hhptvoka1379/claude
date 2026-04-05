@@ -1,0 +1,146 @@
+/* PCTO page layout */
+.pcto-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pcto-page__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.pcto-page__header h1 {
+  margin: 0;
+  font-family: var(--font-heading);
+}
+
+.pcto-page__subtitle {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: var(--colour-text-muted);
+  font-style: italic;
+}
+
+/* Card grid */
+.pcto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+}
+
+/* PCTO card */
+.pcto-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pcto-card--pinned {
+  border-left: 4px solid var(--colour-error, #d32f2f) !important;
+  background: #fef2f2;
+}
+
+.pcto-card__urgent {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--colour-error, #d32f2f);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 8px;
+  margin: -4px -4px 0;
+  background: rgba(211, 47, 47, 0.08);
+  border-radius: var(--radius-sm, 4px);
+}
+
+.pcto-card__urgent-icon {
+  font-size: 0.9rem;
+}
+
+.pcto-card__name {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+.pcto-card__hours {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pcto-card__hours-text {
+  font-size: 0.82rem;
+  color: var(--colour-text-muted);
+}
+
+.pcto-card__hours-text strong {
+  color: var(--colour-text);
+}
+
+.pcto-card__status {
+  display: flex;
+  align-items: center;
+}
+
+.pcto-card__detail {
+  font-size: 0.82rem;
+  color: var(--colour-text-muted);
+}
+
+.pcto-card__label {
+  font-weight: 600;
+  color: var(--colour-text);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.pcto-card__next-action {
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  background: var(--colour-surface, #f9f5ef);
+  border-radius: var(--radius-sm, 4px);
+  border-left: 3px solid var(--colour-accent, #6b4f3a);
+  line-height: 1.4;
+}
+
+.pcto-card__notes {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--colour-text-muted);
+  line-height: 1.4;
+}
+
+/* PCTO form */
+.pcto-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pcto-form__row {
+  display: flex;
+  gap: 12px;
+}
+
+.pcto-form__row > * {
+  flex: 1;
+}
+
+.pcto-form__next-action-input .form-input {
+  border-color: var(--colour-accent, #6b4f3a);
+  font-weight: 500;
+}
+
+.pcto-form__actions {
+  display: flex;
+  gap: 8px;
+  padding-top: 8px;
+}

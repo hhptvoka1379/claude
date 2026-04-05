@@ -1,0 +1,130 @@
+.journal-page {
+  max-width: 1000px;
+}
+
+.journal-page .two-panel__right {
+  background: #fdfcf9;
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+
+.journal-list {
+  padding: 8px !important;
+}
+
+.journal-list__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.journal-list__item:hover {
+  background: var(--colour-surface);
+}
+
+.journal-list__item--selected {
+  background: rgba(107, 79, 58, 0.08);
+}
+
+.journal-list__mood {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.journal-list__info {
+  min-width: 0;
+}
+
+.journal-list__date {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.journal-list__preview {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.journal-editor__header h2 {
+  font-family: var(--font-heading);
+  margin-bottom: var(--space-md);
+}
+
+.journal-scales {
+  display: flex;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.journal-scale {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.journal-scale__moods {
+  display: flex;
+  gap: 6px;
+}
+
+.journal-mood-btn {
+  font-size: 1.4rem;
+  padding: 4px 6px;
+  border-radius: var(--radius-sm);
+  opacity: 0.4;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.journal-mood-btn:hover {
+  opacity: 0.7;
+}
+
+.journal-mood-btn--selected {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.dot-scale {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot-scale__dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--colour-border);
+  background: transparent;
+  padding: 0;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.dot-scale__dot--filled {
+  background: var(--colour-accent);
+  border-color: var(--colour-accent);
+}
+
+.dot-scale__label {
+  margin-left: 4px;
+}
+
+.journal-textarea .form-textarea {
+  min-height: 250px;
+  font-size: 1rem;
+  line-height: 1.7;
+  border: none;
+  background: transparent;
+  padding: 0;
+  resize: none;
+}
+
+.journal-textarea .form-textarea:focus {
+  box-shadow: none;
+}

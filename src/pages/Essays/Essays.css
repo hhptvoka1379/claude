@@ -1,0 +1,147 @@
+/* Essays page layout */
+.essays-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.essays-page__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.essays-page__header h1 {
+  margin: 0;
+  font-family: var(--font-heading);
+}
+
+/* Tipo summary cards row */
+.essays-page__tipo-stats {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.essays-tipo-card {
+  flex: 1;
+  min-width: 180px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.essays-tipo-card__letter {
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  line-height: 1;
+}
+
+.essays-tipo-card__details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.8rem;
+  color: var(--colour-text-muted);
+}
+
+/* Tab / filter bar */
+.essays-filters {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.essays-tab {
+  padding: 6px 16px;
+  border: 2px solid var(--colour-border, #ddd);
+  border-radius: var(--radius-md);
+  background: white;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--colour-text-muted);
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.essays-tab:hover {
+  border-color: var(--colour-accent);
+  color: var(--colour-accent);
+}
+
+.essays-tab--active {
+  border-color: var(--colour-accent);
+  color: var(--colour-accent);
+  background: var(--colour-accent-light, #f0f4ff);
+}
+
+/* Essay card list */
+.essays-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+}
+
+/* Essay card */
+.essay-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.essay-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.essay-card__grade {
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-family: var(--font-mono, monospace);
+  color: var(--colour-text);
+}
+
+.essay-card__title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.essay-card__meta {
+  display: flex;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: var(--colour-text-muted);
+}
+
+.essay-card__feedback {
+  font-size: 0.82rem;
+  color: var(--colour-text-muted);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Essay form */
+.essay-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.essay-form__row {
+  display: flex;
+  gap: 12px;
+}
+
+.essay-form__row > * {
+  flex: 1;
+}
+
+.essay-form__actions {
+  display: flex;
+  gap: 8px;
+  padding-top: 8px;
+}

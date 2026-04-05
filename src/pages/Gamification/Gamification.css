@@ -1,0 +1,80 @@
+.gamification-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.gamification-stat {
+  text-align: center;
+  padding: var(--space-lg) !important;
+}
+
+.gamification-stat__icon {
+  font-size: 1.8rem;
+  margin-bottom: 6px;
+}
+
+.gamification-stat__value {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--colour-text);
+}
+
+.gamification-stat__label {
+  font-size: 0.8rem;
+  margin-top: 2px;
+}
+
+.gamification-section {
+  margin-bottom: var(--space-lg);
+}
+
+.gamification-section h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.badge-item {
+  text-align: center;
+  padding: var(--space-md);
+  background: var(--colour-surface);
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-fast);
+}
+
+.badge-item:hover {
+  transform: translateY(-2px);
+}
+
+.badge-item__icon {
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+.badge-item__name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.badge-item__desc {
+  margin-bottom: 2px;
+}
+
+.badge-item--collectible {
+  background: linear-gradient(135deg, #faf7f2, #f5f0e8);
+  border: 1px solid var(--colour-border);
+}
+
+@media (max-width: 768px) {
+  .gamification-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

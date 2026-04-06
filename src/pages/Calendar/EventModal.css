@@ -1,0 +1,30 @@
+.event-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.event-modal-time-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.event-modal-no-time {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 0.85rem;
+}
+
+.event-modal-no-time input[type="checkbox"] {
+  accent-color: var(--colour-accent);
+}
+
+.event-modal-recurrence {
+  padding: 12px 0;
+  border-top: 1px solid var(--colour-border);
+  margin-top: 4px;
+}

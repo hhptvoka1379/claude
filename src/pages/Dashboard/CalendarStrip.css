@@ -1,0 +1,39 @@
+.calendar-strip {
+  padding: 12px !important;
+  overflow: hidden;
+}
+
+.calendar-strip__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 0 4px;
+}
+
+.calendar-strip__title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--colour-text);
+}
+
+.calendar-strip__link {
+  font-size: 0.82rem;
+  color: var(--colour-accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.calendar-strip__link:hover {
+  text-decoration: underline;
+}
+
+/* Compact week view inside the strip */
+.calendar-strip .week-view {
+  max-height: 480px;
+}
+
+.calendar-strip .week-view__scroll {
+  max-height: 380px;
+}

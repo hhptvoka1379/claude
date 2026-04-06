@@ -171,3 +171,34 @@ export const PCTO_STATUSES = [
   { value: 'awaiting_certification', label: 'Awaiting Certification' },
   { value: 'complete', label: 'Complete' },
 ];
+
+export const EVENT_TYPES = [
+  { value: 'study', label: 'Study' },
+  { value: 'exercise', label: 'Exercise' },
+  { value: 'essay', label: 'Essay' },
+  { value: 'pcto', label: 'PCTO' },
+  { value: 'exam', label: 'Exam' },
+  { value: 'personal', label: 'Personal' },
+];
+
+export const EVENT_STATUSES = [
+  { value: 'pending', label: 'Pending' },
+  { value: 'done', label: 'Done' },
+  { value: 'skipped', label: 'Skipped' },
+];
+
+export function createCalendarEvent(overrides = {}) {
+  return {
+    id: uuid(),
+    title: '',
+    type: 'study',
+    subject_id: null,
+    date: new Date().toISOString().split('T')[0],
+    time_start: null,
+    duration_minutes: 60,
+    notes: '',
+    status: 'pending',
+    recurrence: null,
+    ...overrides,
+  };
+}

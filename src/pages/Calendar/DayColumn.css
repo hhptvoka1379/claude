@@ -1,0 +1,63 @@
+.day-col {
+  flex: 1;
+  min-width: 120px;
+  border-right: 1px solid var(--colour-border, #e0d6cc);
+}
+
+.day-col--compact {
+  min-width: 80px;
+}
+
+.day-col__header {
+  text-align: center;
+  padding: 6px 4px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--colour-border, #e0d6cc);
+  color: var(--colour-text, #3a2e22);
+  user-select: none;
+}
+
+.day-col__header--today {
+  background: rgba(107, 79, 58, 0.1);
+  color: #6b4f3a;
+}
+
+.day-col__header--past {
+  opacity: 0.4;
+}
+
+.day-col__body {
+  position: relative;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent calc(var(--px-per-hour, 48px) - 1px),
+    var(--colour-border, #e0d6cc) calc(var(--px-per-hour, 48px) - 1px),
+    var(--colour-border, #e0d6cc) var(--px-per-hour, 48px)
+  );
+}
+
+.day-col__body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent calc(var(--px-per-hour, 48px) / 2 - 1px),
+    rgba(0, 0, 0, 0.04) calc(var(--px-per-hour, 48px) / 2 - 1px),
+    rgba(0, 0, 0, 0.04) calc(var(--px-per-hour, 48px) / 2)
+  );
+}
+
+.drop-zone--active {
+  background-color: rgba(107, 79, 58, 0.06);
+}
+
+@media (max-width: 768px) {
+  .day-col {
+    min-width: 60px;
+  }
+}

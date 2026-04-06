@@ -1,18 +1,16 @@
-import { useState, useMemo } from 'react';
+import { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { format, subDays, parseISO } from 'date-fns';
-import toast from 'react-hot-toast';
+import { format, subDays } from 'date-fns';
 
 import { useApp } from '../../context/AppContext';
 import { useCollection } from '../../hooks/useCollection';
 import { useCountdown } from '../../hooks/useCountdown';
 import { calculateReadiness, getRiskLevel } from '../../data/readiness';
-import { createAgendaTask } from '../../data/schema';
 
 import Card from '../../components/ui/Card';
 import ProgressBar from '../../components/ui/ProgressBar';
-import Button from '../../components/ui/Button';
 import MetricCard from '../../components/shared/MetricCard';
+import CalendarStrip from './CalendarStrip';
 
 import './Dashboard.css';
 
@@ -23,11 +21,8 @@ export default function Dashboard() {
   const { items: exercises } = useCollection('exercises');
   const { items: sessions } = useCollection('sessions');
   const { items: grades } = useCollection('grades');
-  const { items: agendaTasks, add: addTask, update: updateTask, remove: removeTask } = useCollection('agenda');
 
   const countdown = useCountdown(settings.exam_date);
-
-  const [newTaskText, setNewTaskText] = useState('');
 
   // --- Readiness ---
   const readiness = useMemo(
@@ -43,13 +38,7 @@ export default function Dashboard() {
     return Math.round((totalMin / 60) * 10) / 10;
   }, [sessions]);
 
-  // --- Today's agenda ---
   const today = format(new Date(), 'yyyy-MM-dd');
-  const todayFormatted = format(new Date(), 'EEEE, MMMM d, yyyy');
-  const todayTasks = useMemo(
-    () => agendaTasks.filter((t) => t.date === today),
-    [agendaTasks, today],
-  );
 
   // --- Subject cards sorted by risk ---
   const subjectCards = useMemo(() => {
@@ -68,29 +57,6 @@ export default function Dashboard() {
   // --- Momentum indicator (placeholder: compare readiness to a simple heuristic) ---
   const momentumUp = readiness.momentum >= 0;
 
-  // --- Handlers ---
-  function handleAddTask(e) {
-    e.preventDefault();
-    const text = newTaskText.trim();
-    if (!text) return;
-    const task = createAgendaTask({ text, date: today });
-    addTask(task);
-    setNewTaskText('');
-    addXP(2);
-    toast.success('Task added');
-  }
-
-  function handleToggleTask(task) {
-    updateTask(task.id, { completed: !task.completed });
-    if (!task.completed) {
-      addXP(5);
-    }
-  }
-
-  function handleRemoveTask(id) {
-    removeTask(id);
-  }
-
   // --- Readiness colour ---
   function readinessColour(pct) {
     if (pct >= 70) return 'var(--colour-success)';
@@ -101,54 +67,8 @@ export default function Dashboard() {
   return (
     <div className="dashboard">
 
-      {/* ===== 1. Today's Agenda ===== */}
-      <Card className="agenda">
-        <div className="agenda__header">
-          <span className="agenda__date">{todayFormatted}</span>
-        </div>
-
-        {todayTasks.length === 0 && (
-          <p className="agenda__empty">No tasks for today — add one below.</p>
-        )}
-
-        <ul className="agenda__list">
-          {todayTasks.map((task) => (
-            <li
-              key={task.id}
-              className={`agenda__item ${task.completed ? 'agenda__item--done' : ''}`}
-            >
-              <input
-                type="checkbox"
-                checked={task.completed}
-                onChange={() => handleToggleTask(task)}
-                aria-label={`Mark "${task.text}" as ${task.completed ? 'incomplete' : 'complete'}`}
-              />
-              {task.urgent && <span className="agenda__item-urgent" title="Urgent">&#9888;</span>}
-              <span className="agenda__item-text">{task.text}</span>
-              <button
-                className="agenda__item-delete"
-                onClick={() => handleRemoveTask(task.id)}
-                title="Remove task"
-              >
-                &times;
-              </button>
-            </li>
-          ))}
-        </ul>
-
-        <form className="agenda__add-form" onSubmit={handleAddTask}>
-          <input
-            className="agenda__add-input"
-            type="text"
-            placeholder="+ Add task"
-            value={newTaskText}
-            onChange={(e) => setNewTaskText(e.target.value)}
-          />
-          <Button variant="secondary" size="sm" type="submit">
-            Add
-          </Button>
-        </form>
-      </Card>
+      {/* ===== 1. Calendar Strip ===== */}
+      <CalendarStrip />
 
       {/* ===== 2. Readiness Bar ===== */}
       <Card className="readiness">

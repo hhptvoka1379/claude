@@ -253,6 +253,62 @@ export function seedIfNeeded() {
     ],
   };
 
+  // === CALENDAR EVENTS ===
+  const calendarEvents = [
+    {
+      id: uuid(), title: 'Integrali definiti — esercizi', type: 'exercise',
+      subject_id: 's-mat', date: '2026-04-06', time_start: '09:00',
+      duration_minutes: 90, notes: '3 esercizi su integrali per parti', status: 'pending', recurrence: null,
+    },
+    {
+      id: uuid(), title: 'Essay draft: Pirandello (Tipo B)', type: 'essay',
+      subject_id: 's-ita', date: '2026-04-06', time_start: '11:00',
+      duration_minutes: 120, notes: '', status: 'pending', recurrence: null,
+    },
+    {
+      id: uuid(), title: 'Physics problem set 12', type: 'exercise',
+      subject_id: 's-fis', date: '2026-04-07', time_start: '09:00',
+      duration_minutes: 60, notes: 'Elettromagnetismo', status: 'pending', recurrence: null,
+    },
+    {
+      id: uuid(), title: 'Anki review', type: 'study',
+      subject_id: null, date: '2026-04-06', time_start: '14:00',
+      duration_minutes: 30, notes: '40 cards', status: 'pending',
+      recurrence: { type: 'daily', until: '2026-04-20' },
+    },
+    {
+      id: uuid(), title: 'Hegel — reading', type: 'study',
+      subject_id: 's-fil', date: '2026-04-08', time_start: '10:00',
+      duration_minutes: 60, notes: '', status: 'pending', recurrence: null,
+    },
+    {
+      id: uuid(), title: 'Campo magnetico esercizi', type: 'exercise',
+      subject_id: 's-fis', date: '2026-04-09', time_start: '09:30',
+      duration_minutes: 75, notes: '', status: 'pending', recurrence: null,
+    },
+    {
+      id: uuid(), title: 'Mock exam — Matematica', type: 'exam',
+      subject_id: 's-mat', date: '2026-04-12', time_start: '09:00',
+      duration_minutes: 180, notes: 'Simulazione seconda prova', status: 'pending', recurrence: null,
+    },
+    // Waiting list (unscheduled)
+    {
+      id: uuid(), title: 'PCTO: certify oratorio hours', type: 'pcto',
+      subject_id: null, date: '2026-04-06', time_start: null,
+      duration_minutes: 60, notes: 'Submit form to Don Marco', status: 'pending', recurrence: null,
+    },
+    {
+      id: uuid(), title: 'Svevo — review notes', type: 'study',
+      subject_id: 's-ita', date: '2026-04-06', time_start: null,
+      duration_minutes: 45, notes: '', status: 'pending', recurrence: null,
+    },
+    {
+      id: uuid(), title: 'Probabilità exercises', type: 'exercise',
+      subject_id: 's-mat', date: '2026-04-06', time_start: null,
+      duration_minutes: 60, notes: '', status: 'pending', recurrence: null,
+    },
+  ];
+
   // === SETTINGS ===
   const settings = {
     font_scale: 1,
@@ -273,6 +329,7 @@ export function seedIfNeeded() {
   save('agenda', agenda);
   save('prompts', prompts);
   save('gameState', gameState);
+  save('calendar_events', calendarEvents);
   save('settings', settings);
   save('initialized', true);
 }

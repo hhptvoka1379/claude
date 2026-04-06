@@ -12,6 +12,7 @@ import Gamification from './pages/Gamification/Gamification';
 import PCTO from './pages/PCTO/PCTO';
 import Journal from './pages/Journal/Journal';
 import Prompts from './pages/Prompts/Prompts';
+import Calendar from './pages/Calendar/Calendar';
 import Settings from './pages/Settings/Settings';
 import './index.css';
 
@@ -22,6 +23,7 @@ createRoot(document.getElementById('root')).render(
         <Routes>
           <Route element={<App />}>
             <Route index element={<Dashboard />} />
+            <Route path="calendar" element={<Calendar />} />
             <Route path="subjects" element={<Subjects />} />
             <Route path="subjects/:topicId" element={<Subjects />} />
             <Route path="essays" element={<Essays />} />

@@ -1,0 +1,48 @@
+.week-view {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.week-view__grid {
+  display: flex;
+  overflow-x: auto;
+}
+
+.week-view__gutter {
+  width: 50px;
+  flex-shrink: 0;
+  padding-top: 0;
+  user-select: none;
+}
+
+.week-view__gutter-header {
+  height: 33px; /* match day-col header */
+  border-bottom: 1px solid var(--colour-border, #e0d6cc);
+}
+
+.week-view__gutter-body {
+  position: relative;
+}
+
+.week-view__time-label {
+  position: absolute;
+  right: 6px;
+  font-size: 0.7rem;
+  font-family: var(--font-mono, monospace);
+  color: var(--colour-text-muted, #9a8b7a);
+  transform: translateY(-50%);
+  line-height: 1;
+}
+
+.week-view__columns {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .week-view__columns .day-col {
+    min-width: 60px;
+  }
+}

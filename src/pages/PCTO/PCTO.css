@@ -144,3 +144,23 @@
   gap: 8px;
   padding-top: 8px;
 }
+
+.pcto-card__schedule {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--colour-accent);
+  background: var(--colour-surface);
+  border: 1px solid var(--colour-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background var(--transition-fast);
+}
+
+.pcto-card__schedule:hover {
+  background: var(--colour-border);
+}

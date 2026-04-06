@@ -19,6 +19,7 @@ function App() {
     { key: 'k', ctrl: true, handler: () => navigate('/') },
     { key: 'j', ctrl: true, handler: () => navigate('/journal') },
     { key: '1', ctrl: true, handler: () => navigate('/subjects') },
+    { key: '2', ctrl: true, handler: () => navigate('/calendar') },
     { key: ',', ctrl: true, handler: () => navigate('/settings') },
   ]);
 
@@ -50,6 +51,7 @@ function App() {
                 ['Ctrl + K', 'Dashboard'],
                 ['Ctrl + J', 'New journal entry'],
                 ['Ctrl + 1', 'Subjects'],
+                ['Ctrl + 2', 'Calendar'],
                 ['Ctrl + ,', 'Settings'],
                 ['?', 'Show this help'],
                 ['Esc', 'Close modal / overlay'],

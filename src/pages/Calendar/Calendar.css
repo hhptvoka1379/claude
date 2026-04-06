@@ -1,0 +1,101 @@
+.calendar-page {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.calendar-header__title {
+  font-family: var(--font-heading, serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--colour-text, #3e3228);
+  margin-right: auto;
+}
+
+.calendar-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.calendar-header__nav-btn {
+  background: none;
+  border: 1px solid var(--colour-border, #e0d6cc);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--colour-text, #3e3228);
+  transition: background 100ms;
+  font-family: inherit;
+  line-height: 1.4;
+}
+
+.calendar-header__nav-btn:hover {
+  background: var(--colour-surface, #f0ebe3);
+}
+
+.calendar-header__today-btn {
+  background: none;
+  border: 1px solid var(--colour-border, #e0d6cc);
+  border-radius: 6px;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: var(--colour-text, #3e3228);
+  transition: background 100ms;
+  font-family: inherit;
+}
+
+.calendar-header__today-btn:hover {
+  background: var(--colour-surface, #f0ebe3);
+}
+
+.calendar-header__toggle {
+  display: flex;
+  border: 1px solid var(--colour-border, #e0d6cc);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.calendar-header__toggle-btn {
+  background: none;
+  border: none;
+  padding: 5px 14px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: var(--colour-text-muted, #9a8b7a);
+  transition: background 100ms, color 100ms;
+  font-family: inherit;
+}
+
+.calendar-header__toggle-btn:not(:last-child) {
+  border-right: 1px solid var(--colour-border, #e0d6cc);
+}
+
+.calendar-header__toggle-btn--active {
+  background: var(--colour-primary, #6b4f3a);
+  color: #fff;
+}
+
+.calendar-header__toggle-btn:hover:not(.calendar-header__toggle-btn--active) {
+  background: var(--colour-surface, #f0ebe3);
+}
+
+@media (max-width: 600px) {
+  .calendar-header {
+    gap: 6px;
+  }
+
+  .calendar-header__title {
+    width: 100%;
+    font-size: 1.1rem;
+  }
+}

@@ -3,6 +3,7 @@ import './Sidebar.css';
 
 const NAV_ITEMS = [
   { to: '/', icon: '\u{1F4CA}', label: 'Dashboard' },
+  { to: '/calendar', icon: '\u{1F4C5}', label: 'Calendar' },
   { to: '/subjects', icon: '\u{1F4DA}', label: 'Subjects' },
   { to: '/essays', icon: '\u{270F}\u{FE0F}', label: 'Essays' },
   { to: '/exercises', icon: '\u{1F3C3}', label: 'Exercises' },

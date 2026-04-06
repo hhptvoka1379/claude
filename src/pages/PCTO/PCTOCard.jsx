@@ -11,7 +11,7 @@ const STATUS_COLOURS = {
   complete: '#2e7d32',
 };
 
-export default function PCTOCard({ activity, onClick }) {
+export default function PCTOCard({ activity, onClick, onSchedule }) {
   const statusLabel =
     PCTO_STATUSES.find((s) => s.value === activity.status)?.label || activity.status;
   const statusColour = STATUS_COLOURS[activity.status] || '#8a7a6a';
@@ -73,6 +73,15 @@ export default function PCTOCard({ activity, onClick }) {
             ? activity.notes.slice(0, 120) + '...'
             : activity.notes}
         </p>
+      )}
+
+      {onSchedule && activity.status !== 'complete' && (
+        <button
+          className="pcto-card__schedule"
+          onClick={(e) => { e.stopPropagation(); onSchedule(activity); }}
+        >
+          {'\u{1F4C5}'} Schedule
+        </button>
       )}
     </Card>
   );
